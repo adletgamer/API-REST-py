@@ -11,11 +11,8 @@ infectados = [
 
 # Método GET /infectados/<id>
 @app.route('/infectados/<int:id>', methods=['GET'])
-def obtener_infectado(id):
-    for i in infectados:
-        if i["id"] == id:
-            return jsonify(i)
-    return {"error": "Infectado no encontrado"}, 404
+def get_infectados():
+        return jsonify(infectados)
 
 # POST /infectados
 @app.route('/infectados', methods=['POST'])
